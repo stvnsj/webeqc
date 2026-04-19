@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/ui/Container.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout
+  title="Contacto | EQC Ltda."
+  description="[Información de contacto de EQC.]"
+>
+  <section class="page-section">
+    <Container>
+      <div class="page-intro">
+        <p class="section-eyebrow">Contacto</p>
+        <h1>Contacto</h1>
+        <p>
+          [Aquí se puede invitar al visitante a escribir, llamar o solicitar
+          información sobre servicios, proyectos o puestos de trabajo.]
+          <br/>
+          [Cómo medio de contacto, se puede eventualmente incluir un formulario
+          para recibir mensajes directos. Además se puede mencionar el instragram
+          de la empresa (si es que lo tiene)]
+          <br/> <br/> 
+          [Se puede mencionar aquí (o en otra sección) un conjunto de instrucciones para consultar por 
+          vacantes de trabajo. Por ejemplo, escribir con asunto "Trabajo", enviando datos y currículum.]
+        </p>
+      </div>
+
+      <div class="contact-list">
+        <p><strong>Correo:</strong> {site.email}</p>
+        <p><strong>Teléfono:</strong> {site.phone}</p>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

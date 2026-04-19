@@ -1,0 +1,28 @@
+---
+import { site } from "../../data/site";
+import { navigation } from "../../data/navigation";
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-title">{site.name}</p>
+      <p class="footer-text">{site.description}</p>
+    </div>
+
+    <div>
+      <p class="footer-title">Navegación</p>
+      <ul class="footer-links">
+        {navigation.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-title">Contacto</p>
+      <p class="footer-text">{site.email}</p>
+      <p class="footer-text">{site.phone}</p>
+    </div>
+  </div>
+</footer>

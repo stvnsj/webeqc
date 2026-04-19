@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/ui/Container.astro";
+import { projects } from "../data/projects";
+---
+
+<BaseLayout
+  title="Proyectos | EQC Ltda."
+  description="[Selección de proyectos o experiencias relevantes de EQC.]"
+>
+  <section class="page-section">
+    <Container>
+      <div class="page-intro">
+        <p class="section-eyebrow">Proyectos</p>
+        <h1>Experiencia seleccionada</h1>
+        <p>
+          [Aquí se puede presentar una selección breve de trabajos, experiencias
+          o participaciones importantes de la empresa, a modo de portafolio]
+        </p>
+      </div>
+
+      <div class="project-list">
+        {projects.map((project) => (
+          <article class="project-entry">
+            <p class="project-category">{project.category}</p>
+            <h2>{project.title}</h2>
+            <p>{project.summary}</p>
+
+            <ul class="project-meta">
+              {project.meta.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

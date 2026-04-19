@@ -1,0 +1,32 @@
+---
+import Container from "../ui/Container.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+import { services } from "../../data/services";
+---
+
+<section class="services-preview">
+  <Container>
+    <SectionTitle
+      eyebrow="Servicios"
+      title="Áreas principales de trabajo"
+      text="[Aquí se puede presentar en una frase breve el enfoque general de los servicios de EQC.]"
+    />
+
+    <div class="service-list">
+      {services.map((service) => (
+        <article class="service-row">
+          <div class="service-row-head">
+            <span class="service-row-bar" aria-hidden="true"></span>
+            <h3>{service.title}</h3>
+          </div>
+
+          <p>{service.summary}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="section-action">
+      <a href="/servicios" class="button button-secondary">Ver servicios</a>
+    </div>
+  </Container>
+</section>

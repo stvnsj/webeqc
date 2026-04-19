@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../components/ui/Container.astro";
+import { company } from "../data/company";
+---
+
+<BaseLayout
+  title="Empresa | EQC Ltda."
+  description="[Descripción institucional breve de EQC.]"
+>
+  <section class="page-section">
+    <Container>
+      <div class="page-intro">
+        <p class="section-eyebrow">Empresa</p>
+        <h1>Conozca a EQC</h1>
+        <p>{company.intro}</p>
+      </div>
+
+      <div class="company-sections">
+        {company.sections.map((section) => (
+          <section class="content-block">
+            <h2>{section.title}</h2>
+            <p>{section.text}</p>
+          </section>
+        ))}
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

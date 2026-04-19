@@ -1,0 +1,24 @@
+---
+import Container from "../ui/Container.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+import { company } from "../../data/company";
+---
+
+<section class="approach-preview">
+  <Container>
+    <SectionTitle
+      eyebrow="Empresa"
+      title="Una forma de trabajo clara y enfocada"
+      text={company.intro}
+    />
+
+    <div class="highlight-list">
+      {company.highlights.map((item) => (
+        <div class="highlight-item">
+          <span class="highlight-bar" aria-hidden="true"></span>
+          <p>{item}</p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

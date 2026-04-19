@@ -1,0 +1,33 @@
+---
+import { navigation } from "../../data/navigation";
+import { site } from "../../data/site";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label={site.name}>
+      <img
+        src="/images/eqc-logo.png"
+        alt={site.name}
+        class="logo-image"
+      />
+    </a>
+
+    <nav aria-label="Navegación principal">
+      <ul class="nav-list">
+        {navigation.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={{ active: currentPath === item.href }}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
